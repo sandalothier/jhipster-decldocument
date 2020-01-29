@@ -1,0 +1,25 @@
+/**
+ * DocumentJustificatif entity.
+ * @author Sanda
+ *  c'est l'ensemble des formes juridiques qui peuvent
+ *  exister
+ *  	- société anomyme SA
+ *  	- Société en Non Commandite
+ *  relationship
+ *  	- ManyToOne avec Contribuable
+ */
+entity DocumentJustificatif {
+	titreDocument String
+	document String
+}
+relationship ManyToOne {
+    EtatDocumentComptable to EnteteDeclaration
+}
+// Set pagination options
+paginate DocumentJustificatif with infinite-scroll
+// Use Data Transfert Objects (DTO)
+dto DocumentJustificatif
+// Set service options to all except few
+//service all with serviceImpl
+// Set an angular suffix
+// angularSuffix * with mySuffix
